@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "en-core-web-sm",
+    "fastapi>=0.135.1",
+    "kokoro>=0.9.4",
+    "services>=0.1.1",
+    "soundfile>=0.13.1",
+    "spacy>=3.7.0",
+    "uvicorn>=0.42.0",
+    "websockets>=16.0",
+]
+
+[tool.uv.sources]
+en-core-web-sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl" }
+
+# Makes the `src` package importable from any cwd after `uv sync` (editable install).
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
