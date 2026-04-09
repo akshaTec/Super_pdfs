@@ -22,9 +22,12 @@ body {
 
 .textLayer {
   position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   text-align: initial;
-  inset: 0;
-  overflow: clip;
+  overflow: hidden;
   line-height: 1;
   text-size-adjust: none;
   forced-color-adjust: none;
@@ -46,8 +49,8 @@ body {
   height: 0;
 }
 
-/* Active sentence highlight */
-.textLayer span.reading-highlight {
+/* Active sentence highlight — pdf.js puts `reading-highlight` on text layer divs (see textDivs) */
+.textLayer .reading-highlight {
   background-color: rgba(250, 204, 21, 0.45) !important;
   border-radius: 2px;
   color: transparent !important;
